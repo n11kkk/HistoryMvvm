@@ -1,13 +1,17 @@
-﻿namespace Calculator;
+﻿
+
+using Calculator.ViewModels;
+
+namespace Calculator;
 
 public partial class MainPage : ContentPage
 {
-    
-    public MainPage()
+
+    public MainPage(HistoryViewModel h)
     {
         InitializeComponent();
         OnClear(this, null);
-
+        BindingContext = h;
     }
 
     async Task<string> Docal()
@@ -37,6 +41,14 @@ public partial class MainPage : ContentPage
         {
             System.Diagnostics.Debug.WriteLine(responseString);
             this.currentCalculation1.Text = responseString;
+            //historyAddingResult = responseString;
+            ViewModels.HistoryViewModel.exprString = $"{currentEntry1} = {responseString}";
+            //HistoryPage.HistoryGlobal a = new HistoryPage.HistoryGlobal();
+            //a.Expression = $"{currentEntry1} = {responseString}";
+            //HistoryPage.HistoryGlobal.Expression.Add(HistoryRes);
+            //HistoryPage.HistoryGlobal.Result.Add(responseString);
+
+            //mod.Add(a.Expression);
             return responseString.ToString();
         }
 
@@ -48,8 +60,6 @@ public partial class MainPage : ContentPage
     {
 
         Docal().ToString();
-
-
     }
 
     public void OnSelected1(object sender, EventArgs e)
@@ -97,8 +107,9 @@ public partial class MainPage : ContentPage
 
 
 
-    string currentEntry1 = "";
+    public static string currentEntry1 = "";
 
+    public static string historyAddingResult = "";
 
 
 
