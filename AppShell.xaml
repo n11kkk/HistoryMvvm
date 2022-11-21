@@ -29,6 +29,11 @@
             ContentTemplate="{DataTemplate local:ExercisePage}"
             Route="ExercisePage"/>
     </FlyoutItem>
+	<FlyoutItem Title="History">
+		<ShellContent
+            ContentTemplate="{DataTemplate local:HistoryPage}"
+            Route="HistoryPage"/>
+	</FlyoutItem>
     <MenuItem Text="Light Mode" Clicked="OnLight"/>
     <MenuItem Text="Dark Mode" Clicked="OnDark"/>
     <MenuItem Text="Green Mode" Clicked="OnGreen"/>
