@@ -4,8 +4,9 @@ namespace Calculator;
 
 public partial class HistoryPage : ContentPage
 {
-    public HistoryPage()
+    public HistoryPage(HistoryViewModel h)
     {
         InitializeComponent();
+        BindingContext = h;
     }
 }
