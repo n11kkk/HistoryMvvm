@@ -2,9 +2,9 @@
 
 public partial class ComplexMathPage : ContentPage
 {
-	public ComplexMathPage()
-	{
-		InitializeComponent();
+    public ComplexMathPage()
+    {
+        InitializeComponent();
         OnClear(this, null);
     }
     async Task<string> Docal()
